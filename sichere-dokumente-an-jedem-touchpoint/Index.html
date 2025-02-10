@@ -1,0 +1,641 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"></script>
+    <style>
+        .container {
+            max-width: 960px;
+            margin: 0 auto;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="row" style="gap: 90px;">
+            <div class="col-5" style="padding: 10px;">
+                <img src="Images/Adobe-logo-1536x864.png" alt="" style="width: 210px; height: 118px;">
+                <img src="Images/Sichere-Dokumente-an-jedem-Touchpoint-De-pdf-1-1024x720.jpg" alt=""
+                    style="width: 467px; height: 328px;">
+                <div style="width: 467px;" class="mt-2">
+                    <p style="font-size: 16px;"><b>Höhere Sicherheit, Compliance und Barrierefreiheit.</b></p>
+                    <p style="font-size: 16px;">In der flexiblen Arbeitswelt von heute hat Dokumentensicherheit höchste
+                        Priorität. Organisationen brauchen Lösungen, die Sicherheitsrisiken vermindern und Daten
+                        schützen. Gleichzeitig müssen sie Compliance-Standards beachten und barrierefreien, inklusiven
+                        Zugriff ermöglichen.</p> <br>
+                    <p style="font-size: 16px;">Dieses eBook erläutert, wie Document Cloud für Unternehmen durch
+                        vielschichtige Schutzmaßnahmen die Risiken im gesamten Lebenszyklus eines Dokuments verringert.
+                        Erfahrt, mit welchen Features eure Teams die vorhandenen Technologien optimieren können:</p>
+
+                    <ul style="list-style-type: disc;">
+                        <li>Überprüfung der Einhaltung von gesetzlichen Regelungen und Branchenvorgaben</li>
+                        <li>Nahtlose Anbindung an vorhandene Software wie Microsof 365, Salesforce, Workday oder Google
+                        </li>
+                        <li>Unterstützung der Integrität von Unterschriften und Dateien durch Funktionen zur
+                            Identitätsprüfung</li>
+                        <li>Leichtere Erstellung barrierefreier PDF-Dokumente durch automatisches Tagging und
+                            verbesserte Dokumentenerlebnisse</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="col-5 mt-5 mb-5">
+                <form action="" method="get" id="myForm"
+                    style="width: 480px; border-top: 48px solid #1F3354; border-left: 1px solid #d5dce5; border-right: 1px solid #d5dce5; border-bottom: 1px solid #d5dce5; padding: 24px 20px; background-color: white; position: relative; box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.22);">
+                    <i class="bi bi-file-earmark-arrow-down"
+                        style="position: absolute; top: -40px; left: 9%; transform: translateX(-50%); font-size: 24px; color: white;"></i>
+                    <div style="padding: 11px 15px; ">
+                        <label for="" style="color: #334155; font-size: 16px; font-weight: 500;">Arbeits Email <span
+                                style="color: red;">*</span></label> <br>
+                        <input type="email" name="email" id="email" class="mt-2"
+                            style="width: 410px; height: 45px; border-radius: 5px; border: 1px solid  #dde5ed;">
+                        <span id="emailError" class="error-text"></span><br>
+
+                        <label for="" class="mt-2"
+                            style="color: #334155; font-size: 16px; font-weight: 500;">Vorname<span
+                                style="color: red;">*</span></label> <br>
+                        <input type="text" name="fname" id="fname" class="mt-2"
+                            style="width: 410px; height: 45px; border-radius: 5px; border: 1px solid  #dde5ed;">
+                        <span id="fnameError" class="error-text"></span><br>
+
+                        <label for="" class="mt-2"
+                            style="color: #334155; font-size: 16px; font-weight: 500;">Nachname<span
+                                style="color: red;">*</span></label> <br>
+                        <input type="text" name="lname" id="lname" class="mt-2"
+                            style="width: 410px; height: 45px; border-radius: 5px; border: 1px solid  #dde5ed;">
+                        <span id="lnameError" class="error-text"></span><br>
+
+                        <label for="" class="mt-2" style="color: #334155; font-size: 16px; font-weight: 500;">Name der
+                            Firma<span style="color: red;">*</span></label> <br>
+                        <input type="text" name="cname" id="cname" class="mt-2"
+                            style="width: 410px; height: 45px; border-radius: 5px; border: 1px solid  #dde5ed;">
+                        <span id="cnameError" class="error-text"></span><br>
+
+                        <label for="" class="mt-2"
+                            style="color: #334155; font-size: 16px; font-weight: 500;">Staat/Provinz/Land<span
+                                style="color: red;">*</span></label> <br>
+                        <input type="text" name="land" id="land" class="mt-2"
+                            style="width: 410px; height: 45px; border-radius: 5px; border: 1px solid  #dde5ed;">
+                        <span id="landError" class="error-text"></span><br>
+
+                        <label for="" class="mt-2" style="color: #334155; font-size: 16px; font-weight: 500;">Land<span
+                                style="color: red;">*</span></label> <br>
+                        <select name="country" id="country" class="mt-2" class="form-select"
+                            style="width: 410px; height: 45px; border-radius: 5px; border: 1px solid  #dde5ed;">
+                            <option value="">Please select country</option>
+                            <option value="Afghanistan">Afghanistan</option>
+                            <option value="Åland Islands">Åland Islands</option>
+                            <option value="Albania">Albania</option>
+                            <option value="Algeria">Algeria</option>
+                            <option value="American Samoa">American Samoa</option>
+                            <option value="Andorra">Andorra</option>
+                            <option value="Angola">Angola</option>
+                            <option value="Anguilla">Anguilla</option>
+                            <option value="Antarctica">Antarctica</option>
+                            <option value="Antigua and Barbuda">Antigua and Barbuda</option>
+                            <option value="Argentina">Argentina</option>
+                            <option value="Armenia">Armenia</option>
+                            <option value="Aruba">Aruba</option>
+                            <option value="Australia">Australia</option>
+                            <option value="Austria">Austria</option>
+                            <option value="Azerbaijan">Azerbaijan</option>
+                            <option value="Bahamas">Bahamas</option>
+                            <option value="Bahrain">Bahrain</option>
+                            <option value="Bangladesh">Bangladesh</option>
+                            <option value="Barbados">Barbados</option>
+                            <option value="Belarus">Belarus</option>
+                            <option value="Belgium">Belgium</option>
+                            <option value="Belize">Belize</option>
+                            <option value="Benin">Benin</option>
+                            <option value="Bermuda">Bermuda</option>
+                            <option value="Bhutan">Bhutan</option>
+                            <option value="Bolivia">Bolivia</option>
+                            <option value="Bosnia and Herzegovina">Bosnia and Herzegovina</option>
+                            <option value="Botswana">Botswana</option>
+                            <option value="Bouvet Island">Bouvet Island</option>
+                            <option value="Brazil">Brazil</option>
+                            <option value="British Indian Ocean Territory">British Indian Ocean Territory</option>
+                            <option value="Brunei Darussalam">Brunei Darussalam</option>
+                            <option value="Bulgaria">Bulgaria</option>
+                            <option value="Burkina Faso">Burkina Faso</option>
+                            <option value="Burundi">Burundi</option>
+                            <option value="Cambodia">Cambodia</option>
+                            <option value="Cameroon">Cameroon</option>
+                            <option value="Canada">Canada</option>
+                            <option value="Cape Verde">Cape Verde</option>
+                            <option value="Cayman Islands">Cayman Islands</option>
+                            <option value="Central African Republic">Central African Republic</option>
+                            <option value="Chad">Chad</option>
+                            <option value="Chile">Chile</option>
+                            <option value="China">China</option>
+                            <option value="Christmas Island">Christmas Island</option>
+                            <option value="Cocos (Keeling) Islands">Cocos (Keeling) Islands</option>
+                            <option value="Colombia">Colombia</option>
+                            <option value="Comoros">Comoros</option>
+                            <option value="Congo">Congo</option>
+                            <option value="Congo, The Democratic Republic of The">Congo, The Democratic Republic of The
+                            </option>
+                            <option value="Cook Islands">Cook Islands</option>
+                            <option value="Costa Rica">Costa Rica</option>
+                            <option value="Cote D'ivoire">Cote D'ivoire</option>
+                            <option value="Croatia">Croatia</option>
+                            <option value="Cuba">Cuba</option>
+                            <option value="Cyprus">Cyprus</option>
+                            <option value="Czech Republic">Czech Republic</option>
+                            <option value="Denmark">Denmark</option>
+                            <option value="Djibouti">Djibouti</option>
+                            <option value="Dominica">Dominica</option>
+                            <option value="Dominican Republic">Dominican Republic</option>
+                            <option value="Ecuador">Ecuador</option>
+                            <option value="Egypt">Egypt</option>
+                            <option value="El Salvador">El Salvador</option>
+                            <option value="Equatorial Guinea">Equatorial Guinea</option>
+                            <option value="Eritrea">Eritrea</option>
+                            <option value="Estonia">Estonia</option>
+                            <option value="Ethiopia">Ethiopia</option>
+                            <option value="Falkland Islands (Malvinas)">Falkland Islands (Malvinas)</option>
+                            <option value="Faroe Islands">Faroe Islands</option>
+                            <option value="Fiji">Fiji</option>
+                            <option value="Finland">Finland</option>
+                            <option value="France">France</option>
+                            <option value="French Guiana">French Guiana</option>
+                            <option value="French Polynesia">French Polynesia</option>
+                            <option value="French Southern Territories">French Southern Territories</option>
+                            <option value="Gabon">Gabon</option>
+                            <option value="Gambia">Gambia</option>
+                            <option value="Georgia">Georgia</option>
+                            <option value="Germany">Germany</option>
+                            <option value="Ghana">Ghana</option>
+                            <option value="Gibraltar">Gibraltar</option>
+                            <option value="Greece">Greece</option>
+                            <option value="Greenland">Greenland</option>
+                            <option value="Grenada">Grenada</option>
+                            <option value="Guadeloupe">Guadeloupe</option>
+                            <option value="Guam">Guam</option>
+                            <option value="Guatemala">Guatemala</option>
+                            <option value="Guernsey">Guernsey</option>
+                            <option value="Guinea">Guinea</option>
+                            <option value="Guinea-bissau">Guinea-bissau</option>
+                            <option value="Guyana">Guyana</option>
+                            <option value="Haiti">Haiti</option>
+                            <option value="Heard Island and Mcdonald Islands">Heard Island and Mcdonald Islands</option>
+                            <option value="Holy See (Vatican City State)">Holy See (Vatican City State)</option>
+                            <option value="Honduras">Honduras</option>
+                            <option value="Hong Kong">Hong Kong</option>
+                            <option value="Hungary">Hungary</option>
+                            <option value="Iceland">Iceland</option>
+                            <option value="India">India</option>
+                            <option value="Indonesia">Indonesia</option>
+                            <option value="Iran, Islamic Republic of">Iran, Islamic Republic of</option>
+                            <option value="Iraq">Iraq</option>
+                            <option value="Ireland">Ireland</option>
+                            <option value="Isle of Man">Isle of Man</option>
+                            <option value="Israel">Israel</option>
+                            <option value="Italy">Italy</option>
+                            <option value="Jamaica">Jamaica</option>
+                            <option value="Japan">Japan</option>
+                            <option value="Jersey">Jersey</option>
+                            <option value="Jordan">Jordan</option>
+                            <option value="Kazakhstan">Kazakhstan</option>
+                            <option value="Kenya">Kenya</option>
+                            <option value="Kiribati">Kiribati</option>
+                            <option value="Korea, Democratic People's Republic of">Korea, Democratic People's Republic
+                                of</option>
+                            <option value="Korea, Republic of">Korea, Republic of</option>
+                            <option value="Kuwait">Kuwait</option>
+                            <option value="Kyrgyzstan">Kyrgyzstan</option>
+                            <option value="Lao People's Democratic Republic">Lao People's Democratic Republic</option>
+                            <option value="Latvia">Latvia</option>
+                            <option value="Lebanon">Lebanon</option>
+                            <option value="Lesotho">Lesotho</option>
+                            <option value="Liberia">Liberia</option>
+                            <option value="Libyan Arab Jamahiriya">Libyan Arab Jamahiriya</option>
+                            <option value="Liechtenstein">Liechtenstein</option>
+                            <option value="Lithuania">Lithuania</option>
+                            <option value="Luxembourg">Luxembourg</option>
+                            <option value="Macao">Macao</option>
+                            <option value="Macedonia, The Former Yugoslav Republic of">Macedonia, The Former Yugoslav
+                                Republic of</option>
+                            <option value="Madagascar">Madagascar</option>
+                            <option value="Malawi">Malawi</option>
+                            <option value="Malaysia">Malaysia</option>
+                            <option value="Maldives">Maldives</option>
+                            <option value="Mali">Mali</option>
+                            <option value="Malta">Malta</option>
+                            <option value="Marshall Islands">Marshall Islands</option>
+                            <option value="Martinique">Martinique</option>
+                            <option value="Mauritania">Mauritania</option>
+                            <option value="Mauritius">Mauritius</option>
+                            <option value="Mayotte">Mayotte</option>
+                            <option value="Mexico">Mexico</option>
+                            <option value="Micronesia, Federated States of">Micronesia, Federated States of</option>
+                            <option value="Moldova, Republic of">Moldova, Republic of</option>
+                            <option value="Monaco">Monaco</option>
+                            <option value="Mongolia">Mongolia</option>
+                            <option value="Montenegro">Montenegro</option>
+                            <option value="Montserrat">Montserrat</option>
+                            <option value="Morocco">Morocco</option>
+                            <option value="Mozambique">Mozambique</option>
+                            <option value="Myanmar">Myanmar</option>
+                            <option value="Namibia">Namibia</option>
+                            <option value="Nauru">Nauru</option>
+                            <option value="Nepal">Nepal</option>
+                            <option value="Netherlands">Netherlands</option>
+                            <option value="Netherlands Antilles">Netherlands Antilles</option>
+                            <option value="New Caledonia">New Caledonia</option>
+                            <option value="New Zealand">New Zealand</option>
+                            <option value="Nicaragua">Nicaragua</option>
+                            <option value="Niger">Niger</option>
+                            <option value="Nigeria">Nigeria</option>
+                            <option value="Niue">Niue</option>
+                            <option value="Norfolk Island">Norfolk Island</option>
+                            <option value="Northern Mariana Islands">Northern Mariana Islands</option>
+                            <option value="Norway">Norway</option>
+                            <option value="Oman">Oman</option>
+                            <option value="Pakistan">Pakistan</option>
+                            <option value="Palau">Palau</option>
+                            <option value="Palestinian Territory, Occupied">Palestinian Territory, Occupied</option>
+                            <option value="Panama">Panama</option>
+                            <option value="Papua New Guinea">Papua New Guinea</option>
+                            <option value="Paraguay">Paraguay</option>
+                            <option value="Peru">Peru</option>
+                            <option value="Philippines">Philippines</option>
+                            <option value="Pitcairn">Pitcairn</option>
+                            <option value="Poland">Poland</option>
+                            <option value="Portugal">Portugal</option>
+                            <option value="Puerto Rico">Puerto Rico</option>
+                            <option value="Qatar">Qatar</option>
+                            <option value="Reunion">Reunion</option>
+                            <option value="Romania">Romania</option>
+                            <option value="Russian Federation">Russian Federation</option>
+                            <option value="Rwanda">Rwanda</option>
+                            <option value="Saint Helena">Saint Helena</option>
+                            <option value="Saint Kitts and Nevis">Saint Kitts and Nevis</option>
+                            <option value="Saint Lucia">Saint Lucia</option>
+                            <option value="Saint Pierre and Miquelon">Saint Pierre and Miquelon</option>
+                            <option value="Saint Vincent and The Grenadines">Saint Vincent and The Grenadines</option>
+                            <option value="Samoa">Samoa</option>
+                            <option value="San Marino">San Marino</option>
+                            <option value="Sao Tome and Principe">Sao Tome and Principe</option>
+                            <option value="Saudi Arabia">Saudi Arabia</option>
+                            <option value="Senegal">Senegal</option>
+                            <option value="Serbia">Serbia</option>
+                            <option value="Seychelles">Seychelles</option>
+                            <option value="Sierra Leone">Sierra Leone</option>
+                            <option value="Singapore">Singapore</option>
+                            <option value="Slovakia">Slovakia</option>
+                            <option value="Slovenia">Slovenia</option>
+                            <option value="Solomon Islands">Solomon Islands</option>
+                            <option value="Somalia">Somalia</option>
+                            <option value="South Africa">South Africa</option>
+                            <option value="South Georgia and The South Sandwich Islands">South Georgia and The South
+                                Sandwich Islands</option>
+                            <option value="Spain">Spain</option>
+                            <option value="Sri Lanka">Sri Lanka</option>
+                            <option value="Sudan">Sudan</option>
+                            <option value="Suriname">Suriname</option>
+                            <option value="Svalbard and Jan Mayen">Svalbard and Jan Mayen</option>
+                            <option value="Swaziland">Swaziland</option>
+                            <option value="Sweden">Sweden</option>
+                            <option value="Switzerland">Switzerland</option>
+                            <option value="Syrian Arab Republic">Syrian Arab Republic</option>
+                            <option value="Taiwan">Taiwan</option>
+                            <option value="Tajikistan">Tajikistan</option>
+                            <option value="Tanzania, United Republic of">Tanzania, United Republic of</option>
+                            <option value="Thailand">Thailand</option>
+                            <option value="Timor-leste">Timor-leste</option>
+                            <option value="Togo">Togo</option>
+                            <option value="Tokelau">Tokelau</option>
+                            <option value="Tonga">Tonga</option>
+                            <option value="Trinidad and Tobago">Trinidad and Tobago</option>
+                            <option value="Tunisia">Tunisia</option>
+                            <option value="Turkey">Turkey</option>
+                            <option value="Turkmenistan">Turkmenistan</option>
+                            <option value="Turks and Caicos Islands">Turks and Caicos Islands</option>
+                            <option value="Tuvalu">Tuvalu</option>
+                            <option value="Uganda">Uganda</option>
+                            <option value="Ukraine">Ukraine</option>
+                            <option value="United Arab Emirates">United Arab Emirates</option>
+                            <option value="United Kingdom">United Kingdom</option>
+                            <option value="United States">United States</option>
+                            <option value="United States Minor Outlying Islands">United States Minor Outlying Islands
+                            </option>
+                            <option value="Uruguay">Uruguay</option>
+                            <option value="Uzbekistan">Uzbekistan</option>
+                            <option value="Vanuatu">Vanuatu</option>
+                            <option value="Venezuela">Venezuela</option>
+                            <option value="Viet Nam">Viet Nam</option>
+                            <option value="Virgin Islands, British">Virgin Islands, British</option>
+                            <option value="Virgin Islands, U.S.">Virgin Islands, U.S.</option>
+                            <option value="Wallis and Futuna">Wallis and Futuna</option>
+                            <option value="Western Sahara">Western Sahara</option>
+                            <option value="Yemen">Yemen</option>
+                            <option value="Zambia">Zambia</option>
+                            <option value="Zimbabwe">Zimbabwe</option>
+                        </select>
+                        <span id="countryError" class="error-text"></span><br>
+
+                        <label for="" class="mt-2"
+                            style="color: #334155; font-size: 16px; font-weight: 500;">Postleitzahl<span
+                                style="color: red;">*</span></label> <br>
+                        <input type="text" name="zip" id="zip" class="mt-2"
+                            style="width: 410px; height: 45px; border-radius: 5px; border: 1px solid  #dde5ed;">
+                        <span id="zipError" class="error-text"></span><br>
+
+                        <label for="" class="mt-2"
+                            style="color: #334155; font-size: 16px; font-weight: 500;">Telefon<span
+                                style="color: red;">*</span></label> <br>
+                        <input type="tel" name="tel" id="tel" class="mt-2"
+                            style="width: 410px; height: 45px; border-radius: 5px; border: 1px solid  #dde5ed;">
+                        <span id="telError" class="error-text"></span><br>
+
+                        <label for="" class="mt-2"
+                            style="color: #334155; font-size: 16px; font-weight: 500;">Firmengröße<span
+                                style="color: red;">*</span></label> <br>
+                        <select name="size" id="size" class="mt-2" class="form-select"
+                            style="width: 410px; height: 45px; border-radius: 5px; border: 1px solid  #dde5ed;">
+                            <option value="">Wahlen Sie UnternehmensgroBe</option>
+                            <option value="one">0 - 99</option>
+                            <option value="two">100 - 499</option>
+                            <option value="three">500 - 999</option>
+                            <option value="four">1000 - 4999</option>
+                            <option value="five">5000+</option>
+                        </select>
+                        <span id="sizeError" class="error-text"></span><br>
+
+                        <label for="" class="mt-2"
+                            style="color: #334155; font-size: 16px; font-weight: 500;">Berufsbezeichnung<span
+                                style="color: red;">*</span></label> <br>
+                        <input type="text" name="beru" id="beru" class="mt-2"
+                            style="width: 410px; height: 45px; border-radius: 5px; border: 1px solid  #dde5ed;">
+                        <span id="beruError" class="error-text"></span><br>
+
+                        <label for="" class="mt-2"
+                            style="color: #334155; font-size: 16px; font-weight: 500;">Tätigkeitsbereich<span
+                                style="color: red;">*</span></label> <br>
+                        <select name="job" id="job" class="mt-2" class="form-select"
+                            style="width: 410px; height: 45px; border-radius: 5px; border: 1px solid  #dde5ed;">
+                            <option value="">Wahlen Sie funktion</option>
+                            <option value="cxo">CXO/EVP</option>
+                            <option value="vp">svp/vp</option>
+                            <option value="director">Senior Director / Director</option>
+                            <option value="manager">Senior Manager / Manager</option>
+                            <option value="erzieher">Erzieher</option>
+                            <option value="personal">Fachpersonal</option>
+                            <option value="sonstiges">Sonstiges</option>
+                        </select>
+                        <span id="jobError" class="error-text"></span><br>
+
+                        <label for="" class="mt-2"
+                            style="color: #334155; font-size: 16px; font-weight: 500;">Funktionsbereich/Abteilung:<span
+                                style="color: red;">*</span></label> <br>
+                        <select name="area" id="area" class="mt-2" class="form-select"
+                            style="width: 410px; height: 45px; border-radius: 5px; border: 1px solid  #dde5ed;">
+                            <option value="">Wahlen Sie Funktionsbereich aus</option>
+                            <option value="human-resource">Human Resource</option>
+                            <option value="desktop">IT: Desktop Application</option>
+                            <option value="mobile">IT: Desktop mobile</option>
+                            <option value="legal">Legal</option>
+                            <option value="sales">Sales</option>
+                        </select>
+                        <span id="areaError" class="error-text"></span><br>
+
+                        <label for="" class="mt-2"
+                            style="color: #334155; font-size: 16px; font-weight: 500;">Industrie<span
+                                style="color: red;">*</span></label> <br>
+                        <select name="industry" id="industry" class="mt-2" class="form-select"
+                            style="width: 410px; height: 45px; border-radius: 5px; border: 1px solid  #dde5ed;">
+                            <option value="">Wahlen Sie Barnche aus</option>
+                            <option value="advertising">Advertising</option>
+                            <option value="advertising">Advertising</option>
+                            <option value="agriculture">Agriculture And Forestry</option>
+                            <option value="construction">Construction</option>
+                            <option value="energy">Energy, Mining, Oil and Gas</option>
+                            <option value="financial">Financial Services</option>
+                            <option value="health">Health Care</option>
+                            <option value="insurance">Insurance </option>
+                            <option value="aerospace">Manufacturing - Aerospace </option>
+                            <option value="automotive">Manufacturing - Automotive </option>
+                            <option value="consumer">Manufacturing - Consumer Goods</option>
+                            <option value="industrial">Manufacturing - Industrial</option>
+                            <option value="media">Media And Entertainment</option>
+                            <option value="membership">Membership Organization</option>
+                            <option value="non">Non - Profit</option>
+                            <option value="biotech">Pharmaceuticals and Biotech</option>
+                            <option value="professional">Professional And Technical Services</option>
+                            <option value="rantal">Real Estate, Rantal & Leasing</option>
+                            <option value="retal">Retal</option>
+                            <option value="hardware">Technology Hardware</option>
+                            <option value="software">Technology Software and Servies</option>
+                            <option value="telecommunication">Telecommunications</option>
+                            <option value="transporation">Transportation And Warehousing</option>
+                            <option value="travel">Travel, Leisure & Hospitality</option>
+                            <option value="utilities">Utilities</option>
+                        </select>
+                        <span id="industryError" class="error-text"></span><br>
+
+                        <label for="" class="mt-2" style="color: #334155; font-size: 16px; font-weight: 500;">Was hat in
+                            den kommenden sechs Monaten in eurer Organisation höchste Priorität?<span
+                                style="color: red;">*</span></label> <br>
+                        <select name="que" id="que" class="mt-2" class="form-select"
+                            style="width: 410px; height: 45px; border-radius: 5px; border: 1px solid  #dde5ed;">
+                            <option value=""> -Wahlen- </option>
+                            <option value="generative">Generative KI</option>
+                            <option value="sicherheit">Sicherheit und Compliance</option>
+                            <option value="produktivität">Produktivität der Mitarbeitenden </option>
+                            <option value="dokumentenautomatisierung">Dokumentenautomatisierung</option>
+                        </select>
+                        <span id="queError" class="error-text"></span><br> 
+
+                        <div class="form-check mt-2">
+                            <input type="checkbox" name="stimme" id="stimme" class="form-check-input">
+                            <label for="stimme" class="form-check-label" style="font-size: 16px; color: #637280;"> <a
+                                    href="https://www.adobe.com/de/privacy/policy.html#info-share"
+                                    style="color: red;">Die
+                                    Adobe-Unternehmensgruppe </a> möchte Ihnen erstklassige Inhalte wie diesen zur
+                                Verfügung
+                                stellen und Sie durch <a
+                                    href="https://www.adobe.com/de/privacy/marketing.html#mktg-email"
+                                    style="color: red;"> personalisierte </a> Mitteilungen per E-Mail und Telefon über
+                                die
+                                Produkte und Dienste von Adobe informieren. Durch Absenden dieses Formulars erklären Sie
+                                sich damit einverstanden, dass Sie diese Mitteilungen unter der angegebenen
+                                E-Mail-Adresse und Telefonnummer empfangen. Ausführliche Informationen erhalten Sie in
+                                der <a href="https://www.adobe.com/de/privacy/policy.html" style="color: red;">
+                                    Datenschutzrichtlinie.</a> Dort können Sie sich auch jederzeit wieder abmelden.
+                                <a href="https://www.adobe.com/de/privacy/policy.html"
+                                    style="color: red;">Nutzungsbedingungen. </a>
+                                <br> <span id="stimmeError" class="error-text"></span>
+                        </div>
+                        <button type="button" onclick="validateForm()" class="mt-4 d-flex justify-content-center"
+                            style="width: 275px; height: 42px; border-radius: 7px; font-size: 16px; font-weight: 500; padding: 8px 20px; text-align: center; background-color: #FA0F00; color: white; border: 1px solid #FA0F00; margin: 0 auto;">
+                            Jetzt downloaden
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function validateForm() {
+            document.getElementById("emailError").textContent = "";
+            document.getElementById("fnameError").textContent = "";
+            document.getElementById("lnameError").textContent = "";
+            document.getElementById("cnameError").textContent = "";
+            document.getElementById("landError").textContent = "";
+            document.getElementById("countryError").textContent = "";
+            document.getElementById("zipError").textContent = "";
+            document.getElementById("telError").textContent = "";
+            document.getElementById("sizeError").textContent = "";
+            document.getElementById("beruError").textContent = "";
+            document.getElementById("jobError").textContent = "";
+            document.getElementById("areaError").textContent = "";
+            document.getElementById("industryError").textContent = "";
+            document.getElementById("queError").textContent = "";
+            document.getElementById("stimmeError").textContent = "";
+
+            let isValid = true;
+
+            const email = document.getElementById("email").value;
+            if (email === "") {
+                document.getElementById("emailError").textContent = "Email Address is required";
+                document.getElementById("emailError").style.fontSize = "12px";
+                document.getElementById("emailError").style.color = "red";
+                isValid = false;
+            } else if (!/^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/.test(email)) {
+                document.getElementById("emailError").textContent = "Please fill correct Email Address.";
+                document.getElementById("emailError").style.fontSize = "12px";
+                document.getElementById("emailError").style.color = "red";
+                isValid = false;
+            }
+
+            if (document.getElementById("fname").value === "") {
+                document.getElementById("fnameError").textContent = "First Name is required.";
+                document.getElementById("fnameError").style.fontSize = "12px";
+                document.getElementById("fnameError").style.color = "red";
+                isValid = false;
+            }
+
+            if (document.getElementById("lname").value === "") {
+                document.getElementById("lnameError").textContent = "Last Name is required.";
+                document.getElementById("lnameError").style.fontSize = "12px";
+                document.getElementById("lnameError").style.color = "red";
+                isValid = false;
+            }
+
+            if (document.getElementById("cname").value === "") {
+                document.getElementById("cnameError").textContent = "Company Name is required.";
+                document.getElementById("cnameError").style.fontSize = "12px";
+                document.getElementById("cnameError").style.color = "red";
+                isValid = false;
+            }
+
+            if (document.getElementById("land").value === "") {
+                document.getElementById("landError").textContent = "Land is required";
+                document.getElementById("landError").style.fontSize = "12px";
+                document.getElementById("landError").style.color = "red";
+                isValid = false;
+            }
+
+            if (document.getElementById("country").value === "") {
+                document.getElementById("countryError").textContent = "Country is required.";
+                document.getElementById("countryError").style.fontSize = "12px";
+                document.getElementById("countryError").style.color = "red";
+                isValid = false;
+            }
+
+            if (document.getElementById("zip").value === "") {
+                document.getElementById("zipError").textContent = "Zip is required.";
+                document.getElementById("zipError").style.fontSize = "12px";
+                document.getElementById("zipError").style.color = "red";
+                isValid = false;
+            }
+
+            const tel = document.getElementById("tel").value;
+            if (tel === "") {
+                document.getElementById("telError").textContent = "Phone Number is required";
+                document.getElementById("telError").style.fontSize = "12px";
+                document.getElementById("telError").style.color = "red";
+                isValid = false;
+            } else if (!/^\d{10}$/.test(tel)) {
+                document.getElementById("telError").textContent = "Please fill correct contact number.";
+                document.getElementById("telError").style.fontSize = "12px";
+                document.getElementById("telError").style.color = "red";
+                isValid = false;
+            }
+
+            if (document.getElementById("size").value === "") {
+                document.getElementById("sizeError").textContent = "Size is required.";
+                document.getElementById("sizeError").style.fontSize = "12px";
+                document.getElementById("sizeError").style.color = "red";
+                isValid = false;
+            }
+
+            if (document.getElementById("beru").value === "") {
+                document.getElementById("beruError").textContent = "Beru is required.";
+                document.getElementById("beruError").style.fontSize = "12px";
+                document.getElementById("beruError").style.color = "red";
+                isValid = false;
+            }
+
+            if (document.getElementById("job").value === "") {
+                document.getElementById("jobError").textContent = "Job is required.";
+                document.getElementById("jobError").style.fontSize = "12px";
+                document.getElementById("jobError").style.color = "red";
+                isValid = false;
+            }
+
+            if (document.getElementById("area").value === "") {
+                document.getElementById("areaError").textContent = "Area is required.";
+                document.getElementById("areaError").style.fontSize = "12px";
+                document.getElementById("areaError").style.color = "red";
+                isValid = false;
+            }
+
+            if (document.getElementById("industry").value === "") {
+                document.getElementById("industryError").textContent = "Beru is required.";
+                document.getElementById("industryError").style.fontSize = "12px";
+                document.getElementById("industryError").style.color = "red";
+                isValid = false;
+            }
+
+            if (document.getElementById("que").value === "") {
+                document.getElementById("queError").textContent = "que is required.";
+                document.getElementById("queError").style.fontSize = "12px";
+                document.getElementById("queError").style.color = "red";
+                isValid = false;
+            }
+
+            if (!document.getElementById("stimme").checked) {
+                document.getElementById("stimmeError").textContent = "You must agree to the policy policy";
+                document.getElementById("stimmeError").style.fontSize = "12px";
+                document.getElementById("stimmeError").style.color = "red";
+                isValid = false;
+            }
+
+            if (isValid) {
+                document.getElementById("myForm").submit();
+            } else {
+                return false;
+            }
+
+
+            if (isValid) {
+                window.location.href = "https://techintelpro.com/sichere-dokumente-an-jedem-touchpoint/Sichere-Dokumente-an-jedem-Touchpoint-De.pdf";
+            } else {
+                return false;
+            }
+
+        }
+    </script>
+</body>
+
+</html>

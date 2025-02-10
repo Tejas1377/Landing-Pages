@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"></script>
+    <style>
+        .container {
+            max-width: 990px;
+            margin: 0 auto;
+        }
+
+        .modal-dialog {
+            max-width: 300px;
+            margin: auto;
+        }
+
+        .modal-content {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .modal-footer .btn {
+            width: 100%;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="mt-5">
+            <img src="Images/5572b98e-red-hat-msft-logo-lockup_10d301c000000000000028.png" alt=""
+                style="width: 471px; height: 48px; margin-left: 20px;">
+        </div>
+        <hr style="width: 990px; height: 5px; color: #464444;" class="mt-5">
+
+        <div class="row mt-5" style="margin-left: 20px;">
+            <div class="col-6" style="width: 556px;">
+                <p style="font-size: 35px; line-height: 40px; color: #002539;"><b>A Data de Expiração do CentOS 7 está
+                        próxima. Você está preparado?</b></p>
+                <p style="font-size: 18px; font-family: Arial, sans-serif; color: #002539;">A Data de Expiração do
+                    CentOS 7 Linux está próxima, o que significa que o programa será descontinuado e deixará de receber
+                    suporte ou atualizações de produto. Isso representa um aumento nos riscos <br>cibernéticos e o
+                    potencial sequestrou ou roubo de seus dados.</p>
+                <p style="font-size: 18px; font-family: Arial, sans-serif; color: #002539;">Qual é o seu plano para
+                    modernizar-se?</p>
+                <p style="font-size: 18px; font-family: Arial, sans-serif; color: #002539;">Assista um breve vídeo para
+                    aprender como modernizar rapidamente a sua carga de trabalho do CentOS 7 para um ambiente moderno,
+                    baseado em Azure, no Red Hat Enterprise Linux.</p>
+                <p style="font-size: 18px; font-family: Arial, sans-serif; color: #002539;">Assista agora.</p>
+                <img src="Images/54b83c5d-screenshot-2024-06-12-at-4-16-15pm_10bg06h000000000000028.png" alt=""
+                    style="width: 412px; height: 233px; display: block; margin: 0 auto;">
+            </div>
+
+            <div class="col-5">
+                <form action="" method="get" id="myForm" class="mb-5"
+                    style="width: 342px; border: 1px solid #464444; background-color: #464444; border-radius: 32px; font-family: Arial, sans-serif; padding: 20px;">
+                    <p style="font-size: 20px; text-align: center; color: white;" class="mt-3"><b>Download Now</b></p>
+                    <div style="text-align: center;">
+                        <input type="text" name="fname" id="fname" placeholder=" Nome"
+                            style="width: 260px; height: 37px; display: block; margin: 0 auto; border: none; outline: none; font-size: 14px;">
+                    </div>
+                    <span id="fnameError" class="error-text"></span>
+                    <div style="text-align: center;" class="mt-3">
+                        <input type="text" name="lname" id="lname" placeholder="sobrenome"
+                            style="width: 260px; height: 37px; display: block; margin: 0 auto; border: none; outline: none; font-size: 14px;">
+                    </div>
+                    <span id="lnameError" class="error-text"></span>
+                    <div style="text-align: center;" class="mt-3">
+                        <input type="text" name="cname" id="cname" placeholder="cargo"
+                            style="width: 260px; height: 37px; display: block; margin: 0 auto; border: none; outline: none; font-size: 14px;">
+                    </div>
+                    <span id="cnameError" class="error-text"></span>
+                    <div style="text-align: center;" class="mt-3">
+                        <input type="email" name="email" id="email" placeholder="E-mail"
+                            style="width: 260px; height: 37px; display: block; margin: 0 auto; border: none; outline: none; font-size: 14px;">
+                    </div>
+                    <span id="emailError" class="error-text"></span>
+                    <div style="text-align: center;" class="mt-3">
+                        <input type="tel" name="tel" id="tel" placeholder="Telefone"
+                            style="width: 260px; height: 37px; display: block; margin: 0 auto; border: none; outline: none; font-size: 14px;">
+                    </div>
+                    <span id="telError" class="error-text"></span>
+                    <div style="text-align: center;" class="mt-3">
+                        <input type="text" name="company" id="company" placeholder="Empresa"
+                            style="width: 260px; height: 37px; display: block; margin: 0 auto; border: none; outline: none; font-size: 14px;">
+                    </div>
+                    <span id="companyError" class="error-text"></span>
+                    <div style="text-align: center;" class="mt-3">
+                        <input type="text" name="job" id="job" placeholder="Pais"
+                            style="width: 260px; height: 37px; display: block; margin: 0 auto; border: none; outline: none; font-size: 14px;">
+                    </div>
+                    <span id="jobError" class="error-text"></span>
+                    <div class="mt-3">
+                        <label for="que"
+                            style="font-size: 16px; color: white; display: block; margin-bottom: 8px; margin-left: 20px;"><b>Quais
+                                sistemas operacionais são usados atualmente por sua <br> empresa? <span
+                                    style="color: white;">*</span></b></label>
+                        <select name="que" id="que"
+                            style="width: 260px; height: 37px; display: block; margin: 0 auto; border: 1px solid #ccc; border-radius: 5px; outline: none; font-size: 14px;">
+                            <option value="selecione">Selecione</option>
+                            <option value="centos">CentOS</option>
+                            <option value="rhel">RHEL (Red Hat Enterprise Linux)</option>
+                            <option value="ubuntu">Ubuntu</option>
+                            <option value="windows">Windows Server</option>
+                            <option value="suse">Suse</option>
+                            <option value="otro">Otro (Especifier)</option>
+                        </select>
+                    </div>
+                    <span id="queError" class="error-text"></span>
+                    <div class="form-check mt-3">
+                        <input type="checkbox" name="stimme" id="stimme" class="form-check-input">
+                        <label for="stimme" class="form-check-label" style="font-size: 14px; color: white;">Ao baixar
+                            este programa, você concorda que a Red Hat pode utilizar seus dados pessoais para entregar
+                            informações sobre seus produtos, serviços e eventos. Você pode retirar este consentimento a
+                            qualquer tempo no <a
+                                href="https://www.google.com/url?sa=D&q=https://nam11.safelinks.protection.outlook.com/%3Furl%3Dhttps%253A%252F%252Fwww.redhat.com%252Fen%252Fabout%252Fprivacy-policy%26rct%3Djw%26source%3Demail%26ust%3D1718310600000000%26usg%3DAOvVaw1i967mAEIJxTnUscfW2o72%26hl%3Den%26source%3Dgmail"
+                                style="text-decoration: none; color: #0483C7;">centro de preferencia.</a> Para mais
+                            informações, vea la <a href="https://www.redhat.com/en/about/privacy-policy"
+                                style="text-decoration: none; color: #0483C7;">Declaración
+                                de Privacidad</a>.
+                    </div>
+                    <span id="stimmeError" class="error-text"></span>
+                    <div class="mt-3">
+                        <button type="button" onclick="validateForm()"
+                            style="width: 260px; height: 38px; background-color: #E2E2E4; border: 1px solid #E2E2E4; margin-left: 20px; border-radius: 5px;"><b>Download</b></button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal -->
+    <div class="modal fade" id="thankYouModal" tabindex="-1" aria-labelledby="thankYouModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-body text-center">
+                    <h1 style="font-size: 28px;">Thank You!</h1>
+                    <p style="font-size: 14px;">For Your Interest</p>
+                    <button type="button" id="downloadBtn"
+                        style="width: 100%; height: 38px; background-color: rgba(80, 183, 234, 1); border: 1px solid rgba(80, 183, 234, 1); color: white; border-radius: 4px; font-size: 14px;">DOWNLOAD
+                        NOW</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function validateForm() {
+            document.getElementById("fnameError").textContent = "";
+            document.getElementById("lnameError").textContent = "";
+            document.getElementById("cnameError").textContent = "";
+            document.getElementById("emailError").textContent = "";
+            document.getElementById("telError").textContent = "";
+            document.getElementById("companyError").textContent = "";
+            document.getElementById("jobError").textContent = "";
+            document.getElementById("queError").textContent = "";
+            document.getElementById("stimmeError").textContent = "";
+
+            let isValid = true;
+
+            // Validate form fields
+            if (document.getElementById("fname").value === "") {
+                document.getElementById("fnameError").textContent = "First Name is required.";
+                document.getElementById("fnameError").style.color = "red";
+                document.getElementById("fnameError").style.marginLeft = "20px"
+                isValid = false;
+            }
+            if (document.getElementById("lname").value === "") {
+                document.getElementById("lnameError").textContent = "Last Name is required.";
+                document.getElementById("lnameError").style.color = "red";
+                document.getElementById("lnameError").style.marginLeft = "20px"
+                isValid = false;
+            }
+            if (document.getElementById("cname").value === "") {
+                document.getElementById("cnameError").textContent = "Company Name is required.";
+                document.getElementById("cnameError").style.color = "red";
+                document.getElementById("cnameError").style.marginLeft = "20px"
+                isValid = false;
+            }
+            if (document.getElementById("email").value === "") {
+                document.getElementById("emailError").textContent = "Email Address is required";
+                document.getElementById("emailError").style.color = "red";
+                document.getElementById("emailError").style.marginLeft = "20px"
+                isValid = false;
+            } else if (!/^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/.test(document.getElementById("email").value)) {
+                document.getElementById("emailError").textContent = "Please fill correct Email Address.";
+                document.getElementById("emailError").style.color = "red";
+                document.getElementById("emailError").style.marginLeft = "20px"
+                isValid = false;
+            }
+            if (document.getElementById("tel").value === "") {
+                document.getElementById("telError").textContent = "Phone Number is required";
+                document.getElementById("telError").style.color = "red";
+                document.getElementById("telError").style.marginLeft = "20px"
+                isValid = false;
+            }
+            if (document.getElementById("company").value === "") {
+                document.getElementById("companyError").textContent = "Company Name is required.";
+                document.getElementById("companyError").style.color = "red";
+                document.getElementById("companyError").style.marginLeft = "20px"
+                isValid = false;
+            }
+            if (document.getElementById("job").value === "") {
+                document.getElementById("jobError").textContent = "Country is required.";
+                document.getElementById("jobError").style.color = "red";
+                document.getElementById("jobError").style.marginLeft = "20px"
+                isValid = false;
+            }
+            if (document.getElementById("que").value === "selecione") {
+                document.getElementById("queError").textContent = "Please select an operating system.";
+                document.getElementById("queError").style.color = "red";
+                document.getElementById("queError").style.marginLeft = "20px"
+                isValid = false;
+            }
+            if (!document.getElementById("stimme").checked) {
+                document.getElementById("stimmeError").textContent = "You must agree to the privacy policy.";
+                document.getElementById("stimmeError").style.color = "red";
+                document.getElementById("stimmeError").style.marginLeft = "20px"
+                isValid = false;
+            }
+
+            if (isValid) {
+                var myModal = new bootstrap.Modal(document.getElementById('thankYouModal'));
+                myModal.show();
+            }
+        }
+
+        document.getElementById("downloadBtn").addEventListener("click", function () {
+            window.location.href = "https://techintelpro.com/a-data-de-expirao-do-centos-7-est-prxima-voc-est-preparado/2024-05-22-RED-HAT-CENTOS-portugues-V3.mp4";
+        });
+    </script>
+</body>
+
+</html>
